@@ -2,6 +2,7 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import TechStack from './components/TechStack'
+import Projects from './components/Projects'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <main className="relative z-10">
         <Hero />
         <TechStack />
+        <Projects />
       </main>
 
     </div>
