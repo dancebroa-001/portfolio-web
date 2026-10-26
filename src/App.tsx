@@ -1,6 +1,7 @@
 
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import TechStack from './components/TechStack'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
 
       <main className="relative z-10">
         <Hero />
+        <TechStack />
       </main>
 
     </div>
