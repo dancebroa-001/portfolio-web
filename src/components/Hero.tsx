@@ -5,7 +5,7 @@ export default function Hero() {
   const { t } = useLanguage()
 
   return (
-    <section className="mx-auto flex max-w-4xl flex-col items-center px-6 pb-24 pt-36 text-center md:pb-32 md:pt-44">
+    <section className="mx-auto flex max-w-4xl flex-col items-center px-6 pb-8 pt-36 text-center md:pb-12 md:pt-44">
 
       <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-emerald-200/60 bg-emerald-50 px-3 py-1">
         <span className="relative flex h-2 w-2">

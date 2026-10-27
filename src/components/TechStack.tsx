@@ -1,36 +1,74 @@
+
 import { useLanguage } from '../context/LanguageContext'
 
 const technologies = [
-  { name: 'React', color: 'bg-sky-500' },
-  { name: 'Next.js', color: 'bg-slate-900' },
-  { name: 'TypeScript', color: 'bg-blue-600' },
-  { name: 'Node.js', color: 'bg-emerald-600' },
-  { name: 'Python', color: 'bg-amber-500' },
-  { name: 'PostgreSQL', color: 'bg-indigo-500' },
-  { name: 'Git', color: 'bg-orange-500' },
+  {
+    name: 'React',
+    icon: 'devicon-react-original colored',
+    glow: 'rgba(97,218,251,0.25)',
+  },
+  {
+    name: 'Next.js',
+    icon: 'devicon-nextjs-plain',
+    glow: 'rgba(100,116,139,0.25)',
+  },
+  {
+    name: 'TypeScript',
+    icon: 'devicon-typescript-plain colored',
+    glow: 'rgba(49,120,198,0.25)',
+  },
+  {
+    name: 'Node.js',
+    icon: 'devicon-nodejs-plain colored',
+    glow: 'rgba(104,160,99,0.25)',
+  },
+  {
+    name: 'Python',
+    icon: 'devicon-python-plain colored',
+    glow: 'rgba(255,212,59,0.28)',
+  },
+  {
+    name: 'PostgreSQL',
+    icon: 'devicon-postgresql-plain colored',
+    glow: 'rgba(51,103,145,0.25)',
+  },
+  {
+    name: 'Git',
+    icon: 'devicon-git-plain colored',
+    glow: 'rgba(240,80,50,0.25)',
+  },
 ]
 
 export default function TechStack() {
   const { t } = useLanguage()
+
   return (
-    <section className="mx-auto max-w-4xl px-6 py-12">
+    <section className="tech-section mx-auto max-w-5xl px-6 pt-5 pb-16">
       <div className="flex flex-col items-center">
 
-        <span className="mb-6 font-mono text-xs font-medium uppercase tracking-widest text-slate-400">
+        <span className="mb-8 font-mono text-xs font-medium uppercase tracking-widest text-slate-400">
           {t.tech.title}
         </span>
 
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-          {technologies.map((technology) => (
+        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-5">
+          {technologies.map((tech) => (
             <div
-              key={technology.name}
-              className="flex items-center gap-2 rounded-xl border border-black/[0.05] bg-white/70 px-3.5 py-2 text-xs font-medium text-slate-700 shadow-sm backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white hover:shadow-md"
+              key={tech.name}
+              className="tech-card"
+              style={{
+                '--tech-glow': tech.glow,
+              } as React.CSSProperties}
             >
-              <span
-                className={`h-1.5 w-1.5 rounded-full ${technology.color}`}
-              />
+              <div className="tech-icon">
+                <i
+                  className={tech.icon}
+                  aria-hidden="true"
+                />
+              </div>
 
-              <span>{technology.name}</span>
+              <span className="tech-name">
+                {tech.name}
+              </span>
             </div>
           ))}
         </div>
