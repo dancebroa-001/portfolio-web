@@ -1,22 +1,23 @@
 
 import { projects } from '../data/projects'
 import ProjectCard from './ProjectCard'
+import { useLanguage } from '../context/LanguageContext'
 
 export default function Projects() {
+  const { t } = useLanguage()
+
   return (
     <section
       id="projects"
       className="mx-auto max-w-5xl scroll-mt-24 px-6 py-20"
     >
-
       <div className="mb-14">
         <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-          Featured Work
+          {t.projects.title}
         </h2>
 
         <p className="mt-1.5 text-sm text-slate-500 sm:text-base">
-          Production-grade systems designed with scalability,
-          speed, and clean code.
+          {t.projects.subtitle}
         </p>
       </div>
 
@@ -29,7 +30,6 @@ export default function Projects() {
           />
         ))}
       </div>
-
     </section>
   )
 }

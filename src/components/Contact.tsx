@@ -1,9 +1,11 @@
+import { useLanguage } from '../context/LanguageContext'
 
 import { useState } from 'react'
 
 const EMAIL = 'dancebroa@gmail.com'
 
 export default function Contact() {
+  const { t } = useLanguage()
   const [copied, setCopied] = useState(false)
 
   const copyEmail = async () => {
@@ -27,13 +29,11 @@ export default function Contact() {
       <div className="flex flex-col items-center rounded-3xl border border-black/[0.06] bg-white/80 p-10 text-center shadow-[0_8px_30px_-6px_rgba(15,23,42,0.06)] backdrop-blur-xl sm:p-14">
 
         <h2 className="mb-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
-          Let's build something together
+          {t.contact.title}
         </h2>
 
         <p className="mb-8 max-w-lg text-sm leading-relaxed text-slate-600 sm:text-base">
-          I am currently open to Junior Software Engineer
-          and Full Stack opportunities. Feel free to reach out
-          to discuss projects, collaboration or new opportunities.
+          {t.contact.description}
         </p>
 
         {/* Email */}
@@ -50,7 +50,7 @@ export default function Contact() {
           <button
             type="button"
             onClick={copyEmail}
-            aria-label={copied ? 'Email copied' : 'Copy email'}
+            aria-label={copied ? t.contact.copied : t.contact.copy}
             className="cursor-pointer rounded-md p-1 text-sm text-slate-500 transition-all hover:bg-white hover:text-slate-900"
           >
             {copied ? '✓' : '▢'}
@@ -71,7 +71,7 @@ export default function Contact() {
           <span className="text-slate-300">•</span>
 
           <span className="text-slate-400">
-            LinkedIn — Coming soon
+            {t.contact.linkedinPending}
           </span>
         </div>
 

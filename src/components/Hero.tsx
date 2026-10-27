@@ -1,5 +1,9 @@
 
+import { useLanguage } from '../context/LanguageContext'
+
 export default function Hero() {
+  const { t } = useLanguage()
+
   return (
     <section className="mx-auto flex max-w-4xl flex-col items-center px-6 pb-24 pt-36 text-center md:pb-32 md:pt-44">
 
@@ -9,18 +13,16 @@ export default function Hero() {
           <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
         </span>
         <span className="text-xs font-medium text-emerald-800">
-          Open to opportunities
+          {t.hero.status}
         </span>
       </div>
 
       <h1 className="mb-6 max-w-3xl text-4xl leading-[1.15] font-semibold tracking-tight text-slate-900 sm:text-5xl md:text-6xl">
-        Full Stack Engineer &amp; Computer Engineering Graduate crafting clean, reliable web applications.
+        {t.hero.title}
       </h1>
 
       <p className="mb-10 max-w-2xl text-base leading-relaxed font-normal text-slate-600 sm:text-lg">
-        Blending algorithmic rigor from computer engineering with modern,
-        responsive full-stack craftsmanship. Focused on high-performance
-        web systems and fluid user interfaces.
+        {t.hero.description}
       </p>
 
       <div className="flex flex-wrap items-center justify-center gap-3">
@@ -28,7 +30,7 @@ export default function Hero() {
           href="#projects"
           className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-6 py-3 text-sm font-medium text-white shadow-sm transition-all hover:bg-slate-800 hover:shadow-md active:scale-95"
         >
-          View Work <span aria-hidden="true">↓</span>
+          {t.hero.viewWork} <span aria-hidden="true">↓</span>
         </a>
 
         <a
@@ -36,7 +38,7 @@ export default function Hero() {
           download
           className="inline-flex items-center gap-2 rounded-xl border border-black/[0.08] bg-white/80 px-6 py-3 text-sm font-medium text-slate-900 shadow-sm backdrop-blur-md transition-all hover:bg-white hover:shadow-md active:scale-95"
         >
-          Download CV <span aria-hidden="true">↓</span>
+          {t.nav.cv} <span aria-hidden="true">↓</span>
         </a>
       </div>
     </section>

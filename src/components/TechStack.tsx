@@ -1,3 +1,4 @@
+import { useLanguage } from '../context/LanguageContext'
 
 const technologies = [
   { name: 'React', color: 'bg-sky-500' },
@@ -10,12 +11,13 @@ const technologies = [
 ]
 
 export default function TechStack() {
+  const { t } = useLanguage()
   return (
     <section className="mx-auto max-w-4xl px-6 py-12">
       <div className="flex flex-col items-center">
 
         <span className="mb-6 font-mono text-xs font-medium uppercase tracking-widest text-slate-400">
-          Core Technologies
+          {t.tech.title}
         </span>
 
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
