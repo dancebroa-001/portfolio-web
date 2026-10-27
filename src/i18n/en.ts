@@ -7,13 +7,16 @@ export const en = {
     cv: 'Download CV',
   },
   hero: {
-    status: 'Open to opportunities',
-    title:
-      'Full Stack Engineer & Computer Engineering Graduate crafting clean, reliable web applications.',
-    description:
-      'Blending algorithmic rigor from computer engineering with modern, responsive full-stack craftsmanship. Focused on high-performance web systems and fluid user interfaces.',
-    viewWork: 'View Work',
-  },
+  status: 'Open to opportunities',
+  greeting: "Hi, I'm",
+  name: 'Daniel Ceballos.',
+  role: 'Software Engineer & Full Stack Developer',
+  description:
+    'Building modern web experiences and reliable software.',
+  viewWork: 'View Projects',
+  contact: 'Contact Me',
+},
+
   tech: {
     title: 'Core Technologies',
   },

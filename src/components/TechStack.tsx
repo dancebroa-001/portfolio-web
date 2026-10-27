@@ -43,7 +43,7 @@ export default function TechStack() {
   const { t } = useLanguage()
 
   return (
-    <section className="tech-section mx-auto max-w-5xl px-6 pt-5 pb-16">
+    <section className="tech-section mx-auto max-w-5xl px-6 pt-2 pb-16">  
       <div className="flex flex-col items-center">
 
         <span className="mb-8 font-mono text-xs font-medium uppercase tracking-widest text-slate-400">

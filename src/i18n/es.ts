@@ -15,13 +15,16 @@ export const es = {
     cv: 'Descargar CV',
   },
   hero: {
-    status: 'Abierto a oportunidades',
-    title:
-      'Ingeniero Full Stack y graduado en Ingeniería de Computadores, especializado en crear aplicaciones web limpias y fiables.',
-    description:
-      'Combinando los fundamentos de la ingeniería de computadores con el desarrollo full stack moderno y responsivo. Enfocado en sistemas web de alto rendimiento e interfaces fluidas.',
-    viewWork: 'Ver proyectos',
-  },
+  status: 'Abierto a oportunidades',
+  greeting: 'Hola, soy',
+  name: 'Daniel Ceballos.',
+  role: 'Ingeniero de Software y Desarrollador Full Stack',
+  description:
+    'Creando experiencias web modernas y software fiable.',
+  viewWork: 'Ver proyectos',
+  contact: 'Contactar',
+},
+
   tech: {
     title: 'Tecnologías principales',
   },
