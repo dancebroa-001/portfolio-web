@@ -10,8 +10,8 @@ export default function Navbar() {
 
         <a href="#" className="group hidden items-center gap-2 sm:flex">
           <span className="h-2 w-2 rounded-full bg-indigo-600 transition-transform group-hover:scale-125" />
-          <span className="text-sm font-semibold tracking-tight text-slate-900">
-            Daniel Ceballos
+          <span className="text-base font-bold tracking-tight text-slate-900">
+          DC<span className="text-indigo-600"></span>
           </span>
         </a>
 
