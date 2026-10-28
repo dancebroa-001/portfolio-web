@@ -53,9 +53,9 @@ export default function TechStack() {
     <section className="tech-section mx-auto max-w-5xl px-6 pt-2 pb-16">  
       <div className="flex flex-col items-center">
 
-        <span className="mb-8 font-mono text-xs font-medium uppercase tracking-widest text-slate-400">
-          {t.tech.title}
-        </span>
+        <h2 className="tech-rainbow-title mb-8 font-mono text-xl font-semibold uppercase tracking-[0.2em]">
+        {t.tech.title}
+        </h2>
 
         <div className="flex flex-wrap items-center justify-center gap-4 md:gap-5">
           {technologies.map((tech) => (
