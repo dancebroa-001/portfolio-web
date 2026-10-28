@@ -4,48 +4,152 @@ import { useLanguage } from '../context/LanguageContext'
 export default function Navbar() {
   const { language, toggleLanguage, t } = useLanguage()
 
-  return (
-    <header className="pointer-events-none fixed left-0 top-6 z-50 flex w-full justify-center px-4">
-      <nav className="pointer-events-auto flex items-center justify-between gap-4 rounded-full border border-black/[0.06] bg-white/75 px-5 py-2.5 shadow-[0_4px_20px_-4px_rgba(15,23,42,0.06)] backdrop-blur-xl sm:gap-6">
+  const navLinks = [
+    { label: t.nav.about, href: '#about' },
+    { label: t.nav.projects, href: '#projects' },
+    { label: t.nav.contact, href: '#contact' },
+  ]
 
-        <a href="#" className="group hidden items-center gap-2 sm:flex">
-          <span className="h-2 w-2 rounded-full bg-indigo-600 transition-transform group-hover:scale-125" />
-          <span className="text-base font-bold tracking-tight text-slate-900">
-          DC<span className="text-indigo-600"></span>
+  return (
+    <header className="pointer-events-none fixed inset-x-0 top-5 z-50 px-4">
+
+      <nav className="
+        pointer-events-auto
+        mx-auto flex h-[68px] w-full max-w-[960px]
+        items-center justify-between
+        rounded-full
+        border border-slate-200/80
+        bg-white/85
+        px-5 sm:px-7
+        shadow-[0_8px_35px_rgba(15,23,42,0.07)]
+        backdrop-blur-2xl
+        transition-all duration-300
+      ">
+
+        {/* LOGO */}
+        <a
+          href="#"
+          aria-label="Go to homepage"
+          className="group flex shrink-0 items-center gap-3"
+        >
+          <div className="
+            flex h-10 w-10 items-center justify-center
+            rounded-xl bg-indigo-50
+            transition-all duration-300
+            group-hover:rotate-[-5deg]
+            group-hover:bg-indigo-100
+          ">
+            <span className="text-lg font-bold tracking-tight text-indigo-600">
+              DC<span className="text-indigo-400">.</span>
+            </span>
+          </div>
+
+          <span className="hidden text-[15px] font-semibold tracking-tight text-slate-900 lg:block">
+            Daniel Ceballos
           </span>
         </a>
 
-        <div className="flex items-center gap-4 text-[13px] font-medium text-slate-600 sm:gap-6">
-          <a href="#about" className="transition-colors hover:text-slate-900">
-            {t.nav.about}
-          </a>
-          <a href="#projects" className="transition-colors hover:text-slate-900">
-            {t.nav.projects}
-          </a>
-          <a href="#contact" className="transition-colors hover:text-slate-900">
-            {t.nav.contact}
-          </a>
+        {/* NAVIGATION LINKS */}
+        <div className="hidden items-center gap-1 md:flex">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="
+                rounded-full px-4 py-2.5
+                text-sm font-medium text-slate-600
+                transition-all duration-200
+                hover:bg-slate-100
+                hover:text-slate-950
+              "
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
 
-        <div className="flex items-center gap-2 sm:gap-3">
+        {/* ACTIONS */}
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+
+          {/* LANGUAGE */}
           <button
             type="button"
             onClick={toggleLanguage}
-            aria-label={language === 'en' ? 'Switch to Spanish' : 'Cambiar a inglés'}
-            className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-slate-600 transition-colors hover:bg-slate-200"
+            aria-label={
+              language === 'en'
+                ? 'Switch to Spanish'
+                : 'Cambiar a inglés'
+            }
+            className="
+              flex h-10 w-10 cursor-pointer
+              items-center justify-center
+              rounded-full bg-slate-100
+              text-xs font-semibold text-slate-600
+              transition-all duration-200
+              hover:bg-indigo-50
+              hover:text-indigo-600
+              active:scale-95
+            "
           >
             {language === 'en' ? 'ES' : 'EN'}
           </button>
 
+          {/* CV */}
           <a
             href="/cv/daniel-ceballos-cv.pdf"
             download
-            className="inline-flex items-center gap-1.5 rounded-full bg-slate-900 px-3.5 py-1.5 text-xs font-medium text-white shadow-sm transition-all hover:bg-slate-800 active:scale-95"
+            className="
+              inline-flex h-10 items-center gap-2
+              rounded-full bg-slate-900
+              px-4 sm:px-5
+              text-xs font-semibold text-white
+              shadow-sm
+              transition-all duration-300
+              hover:-translate-y-0.5
+              hover:bg-indigo-600
+              hover:shadow-[0_8px_20px_rgba(79,70,229,0.25)]
+              active:scale-95
+            "
           >
-            {t.nav.cv} <span aria-hidden="true">↗</span>
+            <span className="hidden min-[390px]:inline">
+              {t.nav.cv}
+            </span>
+
+            <span aria-hidden="true" className="text-base">
+              ↗
+            </span>
           </a>
+
         </div>
       </nav>
+
+      {/* MOBILE NAVIGATION */}
+      <div className="
+        pointer-events-auto
+        mx-auto mt-2 flex w-fit items-center justify-center
+        gap-1 rounded-full
+        border border-slate-200/80
+        bg-white/90 p-1.5
+        shadow-sm backdrop-blur-xl
+        md:hidden
+      ">
+        {navLinks.map((link) => (
+          <a
+            key={link.href}
+            href={link.href}
+            className="
+              rounded-full px-3 py-2
+              text-xs font-medium text-slate-600
+              transition-colors
+              hover:bg-slate-100
+              hover:text-slate-900
+            "
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+
     </header>
   )
 }

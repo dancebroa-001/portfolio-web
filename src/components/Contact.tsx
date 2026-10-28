@@ -60,7 +60,7 @@ export default function Contact() {
         {/* Social links */}
         <div className="flex items-center gap-6 text-sm font-medium text-slate-500">
           <a
-            href="https://github.com/edudemer"
+            href="https://github.com/dancebroa-001"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors hover:text-slate-900"
@@ -70,9 +70,14 @@ export default function Contact() {
 
           <span className="text-slate-300">•</span>
 
-          <span className="text-slate-400">
-            {t.contact.linkedinPending}
-          </span>
+          <a
+            href="https://www.linkedin.com/in/daniel-ceballos-roales-22b539346/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-slate-900"
+          >
+            Linkedin ↗
+          </a>
         </div>
 
       </div>
